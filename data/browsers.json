@@ -1,0 +1,143 @@
+{
+  "dataset": "antidetect-browser-limits",
+  "description": "Published limits for antidetect browsers, as documented by each vendor. Every field carries a source URL and the date it was read.",
+  "last_checked": "2026-08-20",
+  "method": "https://best-antidetect-browsers.com/how-we-pick/",
+  "notes": "null means the vendor does not publish the figure. It never means zero and is never an estimate. official=false marks a figure reported by third parties rather than the vendor.",
+  "licence": "CC0-1.0",
+  "products": [
+    {
+      "product": "Dolphin Anty",
+      "vendor_url": "https://dolphin-anty.com/",
+      "source": "https://dolphin-anty.com/",
+      "checked": "2026-08-20",
+      "source_note": "Help centre plans article, updated 2026-02-28.",
+      "free_tier": {
+        "profiles": 5,
+        "time_limit": null,
+        "proxies": 50,
+        "extensions": 10,
+        "concurrent_profiles": 3,
+        "profile_recreations_per_month": 200,
+        "cloud_sync": false,
+        "users": 1,
+        "devices": null,
+        "note": "Reduced from 10 profiles to 5 in autumn 2025. Accounts above the limit are frozen until the count is reduced."
+      },
+      "entry_price_usd_month": { "value": 10, "profiles": 20, "official": true },
+      "automation": ["Selenium", "Puppeteer", "Playwright"],
+      "api_rate_limit_per_min": null,
+      "team": {
+        "seats_on_entry_tier": 1,
+        "seat_model": "billed per user on top of the plan",
+        "documented_seat_ceiling": null,
+        "device_limit": null
+      },
+      "platforms": ["Windows", "macOS", "Linux"],
+      "features": ["Synchronizer replays one operator's actions across a batch of profiles"]
+    },
+    {
+      "product": "AdsPower",
+      "vendor_url": "https://www.adspower.com/pricing",
+      "source": "https://www.adspower.com/pricing",
+      "checked": "2026-08-20",
+      "source_note": "Pricing page runs a calculator keyed to profile and member counts. No fixed tier price is published.",
+      "free_tier": {
+        "profiles": 2,
+        "time_limit": null,
+        "cloud_sync": true,
+        "users": 1,
+        "members": 0,
+        "devices": null,
+        "note": "Only free tier of the four that syncs profiles across computers. A separate 7-day paid trial exists."
+      },
+      "entry_price_usd_month": {
+        "value": 9,
+        "profiles": 10,
+        "official": false,
+        "note": "Not published by AdsPower. Commonly reported starting configuration from third-party pricing trackers."
+      },
+      "automation": ["Local API", "RPA builder"],
+      "api_rate_limit_per_min": {
+        "value": [120, 300, 600],
+        "official": true,
+        "note": "Published per tier. The only product of the four to publish a rate limit."
+      },
+      "team": {
+        "seats_on_entry_tier": 1,
+        "seat_model": "members added through the pricing calculator",
+        "documented_seat_ceiling": null,
+        "device_limit": null
+      },
+      "platforms": ["Windows", "macOS", "Linux"]
+    },
+    {
+      "product": "GoLogin",
+      "vendor_url": "https://gologin.com/",
+      "source": "https://gologin.com/",
+      "checked": "2026-08-20",
+      "source_note": "Vendor documentation gives two different prices for the same entry plan. Both values recorded.",
+      "free_tier": {
+        "profiles": 3,
+        "time_limit": null,
+        "cloud_sync": false,
+        "users": 1,
+        "devices": null,
+        "note": "Profile sharing is excluded from the free tier."
+      },
+      "entry_price_usd_month": {
+        "value": 9,
+        "official": true,
+        "note": "Vendor documentation is internally inconsistent on this figure."
+      },
+      "annual_discount": { "value": "50% less than monthly", "official": true },
+      "automation": ["REST API", "cloud launches"],
+      "api_rate_limit_per_min": null,
+      "team": {
+        "seats_on_entry_tier": 0,
+        "team_tier_usd_month": 119,
+        "seat_model": "Business tier priced before seats are added",
+        "documented_seat_ceiling": null,
+        "device_limit": null
+      },
+      "platforms": ["Windows", "macOS", "Linux"],
+      "features": ["bundles residential proxy traffic"]
+    },
+    {
+      "product": "Nativ Browser",
+      "vendor_url": "https://nativbrowser.com/docs",
+      "source": "https://nativbrowser.com/docs",
+      "checked": "2026-08-20",
+      "source_note": "Marketing site and documentation disagree on seat count and on free-tier cloud sync. Documentation followed.",
+      "free_tier": {
+        "profiles": 2,
+        "profile_type": "local",
+        "time_limit": null,
+        "cloud_sync": false,
+        "cloud_sync_marketing_claim": true,
+        "users": 1,
+        "devices": 1
+      },
+      "entry_price_usd_month": { "value": 49, "official": true },
+      "automation": [],
+      "api_rate_limit_per_min": null,
+      "team": {
+        "seats_on_entry_tier": 1,
+        "team_tier_usd_month": 99,
+        "seat_model": "priced by seat rather than by profile",
+        "documented_seat_ceiling": 100,
+        "marketing_seat_claim": 1000,
+        "device_limit": 200,
+        "device_limits_by_tier": { "free": 1, "core_box": 2, "business_box": 200 },
+        "cloud_profiles": 10000,
+        "local_profiles": "unlimited on paid tiers",
+        "note": "Billing documentation states fees are final and non-refundable. Seats are not self-service beyond 100."
+      },
+      "platforms": ["Windows 10", "Windows 11"]
+    }
+  ],
+  "verification_tools": [
+    { "name": "Pixelscan", "url": "https://pixelscan.net/", "measures": "fingerprint consistency at one moment on one machine" },
+    { "name": "Iphey", "url": "https://iphey.com/", "measures": "detailed fingerprint report and inconsistencies" }
+  ]
+}
